@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Sign Up page with JS</title>
+<script>
+ function signup(){
+     let fname = document.getElementById("fname").value;
+     if(fname == ""){
+        let fmessage="fname is mandatory";
+        document.getElementById("fmessage").innerHTML=fmessage;
+     } else{
+      let fmessage="";
+      document.getElementById("fmessage").innerHTML=fmessage;
+     }	
+
+     let lname = document.getElementById("lname").value;
+     if(lname == ""){
+       let lmessage="lname is mandatory";
+       document.getElementById('lmessage').innerHTML=lmessage;
+     }
+     else{
+      let lmessage="";
+      document.getElementById('lmessage').innerHTML=lmessage;
+     }
+ }
+
+</script>
+
+<style> 
+.errormsg{
+  color: red;
+}
+ 
+</style>
+</head>
+<body>
+<h2>Please Sign-up</h2>
+
+<form>
+<label>Please enter first name: </label>
+<input type="text" name="fname" id="fname">
+<span name="fmessage" id="fmessage" class="errormsg"></span>
+<br /><br />
+<label>please enter last name: </label>
+<input type="text" name="lname" id="lname">
+<span name="lmessage" id="lmessage" class="errormsg"></span>
+
+<br /><br />
+<input type="button" name="mybutton" id="mybutton" value="Sign Up" onClick="signup()">
+
+</form>
+</body>
+</html>
+
+<!-- this is my comment
+Rule 1: All HTML elements must have unique name and id. 
+because we can then reach out to these elements from javascript inside head section. 
+
+Rule2: We will be using document object exposed by web browser to read values using function getElementById() 
+
+Note: There are 2 ways in which the webpage can interact with the user. 
+1. click(button or link): onClick="" 
+2. fill the form : 
+
+To generate pop up/alert box, use alert(<your message>)
+-->
+
+
+
+
+
+
