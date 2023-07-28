@@ -7,7 +7,15 @@
      let lname = document.getElementById("lname").value;
      let email = document.getElementById("email").value;
      let password = document.getElementById("password").value;
-     
+     let fulltimejob = document.getElementById("fulltimejob").value;
+     let profession = document.getElementById("profession").value;
+     let fullname = fname + ' ' + lname; 
+
+     localStorage.setItem("fullname",fullname );
+     localStorage.setItem("email", email);
+     localStorage.setItem("fulltimejob", fulltimejob);
+     localStorage.setItem("profession", profession);
+ 
  }
 
 </script>
@@ -16,7 +24,7 @@
 <body>
 <h2>Please Sign-up</h2>
 
-<form>
+<form onsubmit="signup()" action="signup_success.html">
 <label>Please enter first name: </label>
 <input type="text" name="fname" id="fname" required>
  <br /><br />
@@ -27,9 +35,23 @@
 <input type="email" name="email" id="email" required>
  <br /><br />
 <label>please enter your password: </label>
-<input type="text" name="password" id="password"  required pattern="[a-zA-Z0-9@_]{8,15}">
+<input type="password" name="password" id="password"  required pattern="[a-zA-Z0-9@_]{8,15}">
  <br /><br />
-<input type="submit" name="mybutton" id="mybutton" value="Sign Up" onClick="signup()">
+<hr />
+<label>Are you in a full time job?</label><br />
+<input type="radio" name="fulltimejob" id="fulltimejob" value="YES" required> YES 
+<input type="radio" name="fulltimejob" id="fulltimejob" value="NO" required> NO 
+<br /><br />
+<label>Please select your profession</label>
+<select name="profession" id="profession" required>
+  <option value="">---select profession---</option>
+  <option value="IT Engineer">IT Engineer</option>
+  <option value="Coder">Coder</option>
+  <option value="Office Executive">Office Executive</option>
+  <option value="other">other</option>
+</select>
+<br /><br />
+<input type="submit" name="mybutton" id="mybutton" value="Sign Up" >
 
 </form>
 </body>
@@ -43,7 +65,7 @@ Rule2: We will be using document object exposed by web browser to read values us
 
 Note: There are 2 ways in which the webpage can interact with the user. 
 1. click(button or link): onClick="" 
-2. fill the form : 
+2. fill the form : onSubmit("") 
 
 To generate pop up/alert box, use alert(<your message>)
 -->
