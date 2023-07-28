@@ -1,8 +1,26 @@
 <html>
     <head>
-
+            <script>
+                function process(){
+                    let fullname = localStorage.getItem("fullname");
+                    let email = localStorage.getItem("email");
+                    let profession = localStorage.getItem("profession");
+                    let fulltimejob = localStorage.getItem("fulltimejob");
+                    
+                    document.getElementById('fullname').innerHTML=fullname;
+                    document.getElementById('email').innerHTML=email;
+                    document.getElementById('profession').innerHTML=profession;
+                    document.getElementById('fulltimejob').innerHTML=fulltimejob;
+                }
+            </script>
     </head>
-    <body>
+    <body onload="process()">
         <h3>SignUp Success</h3>
+            Fullname: <div id="fullname" name="fullname"></div> <br />
+            Email: <div id="email" name="email"></div> <br />
+            Full Time Job: <div id="fulltimejob" name="fulltimejob"></div> <br />
+            Profession: <div id="profession" name="profession"></div> <br />
+            
+         
     </body>
 </html>
